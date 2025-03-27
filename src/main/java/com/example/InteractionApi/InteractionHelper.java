@@ -1,13 +1,14 @@
 package com.example.InteractionApi;
 
+import com.example.PacketUtils.WidgetInfoExtended;
 import com.example.Packets.MousePackets;
 import com.example.Packets.WidgetPackets;
-import net.runelite.api.widgets.WidgetInfo;
 
 import java.util.List;
 
 public class InteractionHelper {
-    static private final int quickPrayerWidgetID = WidgetInfo.MINIMAP_QUICK_PRAYER_ORB.getPackedId();
+    static private final int quickPrayerWidgetID = WidgetInfoExtended.MINIMAP_QUICK_PRAYER_ORB.getPackedId();
+    static private final int specialWidgetID = WidgetInfoExtended.MINIMAP_SPEC_ORB.getPackedId();
 
     public static void toggleNormalPrayer(int packedWidgID) {
         MousePackets.queueClickPacket();
@@ -23,7 +24,12 @@ public class InteractionHelper {
     }
 
     public static void togglePrayer() {
-        MousePackets.queueClickPacket(0, 0);
+        MousePackets.queueClickPacket();
         WidgetPackets.queueWidgetActionPacket(1, quickPrayerWidgetID, -1, -1);
+    }
+
+    public static void toggleSpecial() {
+        MousePackets.queueClickPacket();
+        WidgetPackets.queueWidgetActionPacket(1, specialWidgetID, -1, -1);
     }
 }

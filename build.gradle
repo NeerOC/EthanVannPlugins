@@ -24,14 +24,13 @@ dependencies {
     implementation 'org.json:json:20230227'
     implementation 'org.roaringbitmap:RoaringBitmap:0.9.44'
     implementation("org.benf:cfr:0.152")
+    implementation 'org.reflections:reflections:0.10.2'
 }
 sourceSets {
     main {
-
         java {
-            srcDir "src"
+            srcDirs = ['src/main/java']
         }
-
     }
 }
 

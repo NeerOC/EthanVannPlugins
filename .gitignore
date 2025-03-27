@@ -1,6 +1,19 @@
-.gradle
-build
+# Compiled class files
+*.class
+
+# Build directories
+build/
+out/
+bin/
+
+# Gradle files
+.gradle/
+
+# IDE files
 .idea/
+*.iml
+.vscode/
+
 .project
 .settings/
 .classpath
